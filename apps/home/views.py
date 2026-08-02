@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-def home(request):
+def home_view(request):
     """
     Hiển thị trang chủ.
 
