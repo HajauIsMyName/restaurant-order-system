@@ -1,40 +1,101 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+{% load static %}
+
+<header class="navbar-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+      <!-- Brand Logo -->
+      <a class="navbar-custom__brand" href="#">
+        <svg
+          class="navbar-custom__logo-svg"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 42H52C53.1046 42 54 42.8954 54 44V45C54 46.1046 53.1046 47 52 47H12C10.8954 47 10 46.1046 10 45V44C10 42.8954 10.8954 42 12 42Z"
+            fill="#E05326"
+          />
+          <path
+            d="M32 16C20.9543 16 12 24.9543 12 36H52C52 24.9543 43.0457 16 32 16Z"
+            fill="#E05326"
+          />
+          <circle cx="32" cy="12" r="3" fill="#E05326" />
+          <path
+            d="M24 6C24 6 25 8 25 10"
+            stroke="#E05326"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M32 5C32 5 33 7 33 9"
+            stroke="#E05326"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M40 6C40 6 41 8 41 10"
+            stroke="#E05326"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <div class="navbar-custom__brand-text">
+          <span class="navbar-custom__brand-title">H2T</span>
+          <span class="navbar-custom__brand-sub">ORDER SYSTEM</span>
         </div>
+      </a>
+
+      <!-- Nút 3 gạch Mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarH2T"
+        aria-controls="navbarH2T"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu Items -->
+      <div class="collapse navbar-collapse" id="navbarH2T">
+        <ul class="navbar-custom__menu mx-auto">
+          <li>
+            <a
+              class="navbar-custom__menu-item navbar-custom__menu-item--active"
+              href="#"
+            >
+              <i class="fa-regular fa-clipboard navbar-custom__menu-icon"></i>
+              <span class="navbar-custom__menu-label">GỌI MÓN</span>
+            </a>
+          </li>
+          <li>
+            <a class="navbar-custom__menu-item" href="#">
+              <i class="fa-solid fa-user-group navbar-custom__menu-icon"></i>
+              <span class="navbar-custom__menu-label">XEM MÓN CỦA CÁC BẠN</span>
+            </a>
+          </li>
+          <li>
+            <a class="navbar-custom__menu-item" href="#">
+              <i class="fa-regular fa-credit-card navbar-custom__menu-icon"></i>
+              <span class="navbar-custom__menu-label">THANH TOÁN</span>
+            </a>
+          </li>
+          <li>
+            <a class="navbar-custom__menu-item" href="#">
+              <i class="fa-solid fa-chart-column navbar-custom__menu-icon"></i>
+              <span class="navbar-custom__menu-label">CHECK DOANH THU</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action Section -->
+        <div class="navbar-custom__actions">
+          <div class="navbar-custom__divider d-none d-lg-block"></div>
+          <a href="#" class="btn navbar-custom__login-btn">Đăng nhập</a>
+        </div>
+      </div>
     </div>
-</nav>
+  </nav>
+</header>

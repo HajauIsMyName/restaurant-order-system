@@ -1,0 +1,161 @@
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  padding: 12px 32px;
+  border-radius: 0;
+}
+
+/* Brand Elements */
+.navbar-custom__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-custom__logo-svg {
+  width: 42px;
+  height: 42px;
+}
+
+.navbar-custom__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-custom__brand-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.navbar-custom__brand-sub {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e05326;
+  letter-spacing: 0.5px;
+  margin-top: 3px;
+}
+
+/* Menu Elements */
+.navbar-custom__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-custom__menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #2b2b2b;
+  gap: 6px;
+  padding: 6px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.navbar-custom__menu-icon {
+  font-size: 20px;
+}
+
+/* Modifiers */
+.navbar-custom__menu-item:hover,
+.navbar-custom__menu-item--active {
+  color: #e05326;
+}
+
+/* Actions Elements */
+.navbar-custom__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-custom__divider {
+  width: 1px;
+  height: 36px;
+  background-color: #e5e7eb;
+}
+
+.navbar-custom__login-btn {
+  border: 1.5px solid #e05326;
+  color: #e05326;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.navbar-custom__login-btn:hover {
+  background-color: #e05326;
+  color: #ffffff;
+  border-color: #e05326;
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE (Fix nút 3 gạch)
+   ========================================== */
+@media (max-width: 991.88px) {
+  .navbar-custom {
+    padding: 10px 16px;
+  }
+
+  .navbar-custom .navbar-collapse {
+    background-color: #ffffff;
+    padding: 15px 10px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 10px;
+  }
+
+  .navbar-custom__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-custom__menu li {
+    width: 100%;
+  }
+
+  .navbar-custom__menu-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    padding: 12px 10px;
+    width: 100%;
+  }
+
+  .navbar-custom__divider {
+    display: none;
+  }
+
+  .navbar-custom__actions {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .navbar-custom__login-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
