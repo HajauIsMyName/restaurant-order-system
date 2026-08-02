@@ -3,7 +3,7 @@
 <header class="navbar-wrapper">
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-      <!-- Brand Logo -->
+      <!-- Logo Thương Hiệu -->
       <a class="navbar-custom__brand" href="#">
         <svg
           class="navbar-custom__logo-svg"
@@ -58,7 +58,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menu Items -->
+      <!-- Menu Items & Tab Overlay trên Mobile -->
       <div class="collapse navbar-collapse" id="navbarH2T">
         <ul class="navbar-custom__menu mx-auto">
           <li>
@@ -90,13 +90,50 @@
           </li>
         </ul>
 
-        <!-- Action Section: Chỉ hiển thị Nút Đăng nhập khi CHƯA đăng nhập -->
-        {% if not user.is_authenticated %}
+        <!-- Action Section: Kiểm tra User Login -->
         <div class="navbar-custom__actions">
           <div class="navbar-custom__divider d-none d-lg-block"></div>
-          <a href="{% url 'login' %}" class="btn navbar-custom__login-btn">Đăng nhập</a>
+
+          {% if request.user.is_authenticated %}
+          <!-- Đã đăng nhập: Dropdown Username -->
+          <div class="dropdown navbar-custom__user-dropdown">
+            <button
+              class="navbar-custom__user-toggle border-0 bg-transparent"
+              id="userDropdownBtn"
+              type="button"
+            >
+              <i class="fa-solid fa-circle-user navbar-custom__user-icon"></i>
+              <span class="navbar-custom__username">
+                {{ request.user.username }}
+              </span>
+              <i class="fa-solid fa-chevron-down ms-1 style-chevron"></i>
+            </button>
+
+            <ul
+              class="dropdown-menu dropdown-menu-end navbar-custom__user-menu"
+              id="userDropdownMenu"
+            >
+              <!-- <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-solid fa-user me-2"></i>Trang cá nhân</a
+                >
+              </li> -->
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="{% url 'logout' %}"
+                  ><i class="fa-solid fa-right-from-bracket me-2"></i>Đăng
+                  xuất</a
+                >
+              </li>
+            </ul>
+          </div>
+          {% else %}
+          <!-- Chưa đăng nhập: Nút Login -->
+          <a href="{% url 'login' %}" class="btn navbar-custom__login-btn"
+            >Đăng nhập</a
+          >
+          {% endif %}
         </div>
-        {% endif %}
       </div>
     </div>
   </nav>
